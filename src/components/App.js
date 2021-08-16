@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const ERROR = 'error';
 
-function App() {
+function App({ id }) {
     const [response, setResponse] = useState();
     const [loading, setLoading] = useState(true);
 
@@ -15,7 +15,7 @@ function App() {
         const load = async () => {
             try {
                 setLoading(true);
-                const id = 'EMP00';
+
                 const res = await fetch(`api/user/${id}`);
                 const jsonRes = await res.json();
                 setResponse(jsonRes);

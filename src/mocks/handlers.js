@@ -6,7 +6,7 @@ export const handlers = [
         if (id === 'EMP000') {
             return res(
                 ctx.status(200),
-                ctx.delay(2000),
+                ctx.delay(200),
                 ctx.json({
                     status: 'error',
                     error: {
@@ -18,7 +18,7 @@ export const handlers = [
         if (id === 'EMP101') {
             return res(
                 ctx.status(200),
-                ctx.delay(2000),
+                ctx.delay(200),
                 ctx.json({
                     status: 'success',
                     data: {

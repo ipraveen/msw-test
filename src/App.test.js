@@ -1,8 +1,23 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, waitFor } from '@testing-library/react';
+import App from './components/App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('card should load for a valid id', async () => {
+    render(<App id="EMP101"/>);
+    const spinner = screen.getByTestId('loading-spinner');
+    expect(spinner).toBeInTheDocument();
+    await waitFor(() =>
+        expect(screen.getByText(/praveen singh/i)).toBeInTheDocument()
+    );
+});
+
+
+test('card should not load for a in-valid id', async () => {
+  render(<App id="EMP000"/>);
+  const spinner = screen.getByTestId('loading-spinner');
+  expect(spinner).toBeInTheDocument();
+ 
+  await waitFor(() =>
+      expect(screen.getByRole('alert')).toBeInTheDocument()
+  );
+  expect(screen.getByText(/Sorry, can't find user you are looking for/i)).toBeInTheDocument()
 });

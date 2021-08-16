@@ -4,7 +4,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const LoadingCard = () => {
     return (
         <Paper className="profile loading" elevation={1}>
-            <CircularProgress />
+            <CircularProgress  data-testid="loading-spinner"/>
         </Paper>
     );
 };
