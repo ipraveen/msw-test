@@ -8,6 +8,8 @@ test('card should load for a valid id', async () => {
     await waitFor(() =>
         expect(screen.getByText(/praveen singh/i)).toBeInTheDocument()
     );
+
+    screen.debug();
 });
 
 

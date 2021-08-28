@@ -1,10 +1,13 @@
 import { rest } from 'msw';
 
 export const handlers = [
-    rest.get('/api/user/:id', (req, res, ctx) => { // Handler
+    rest.get('/api/user/:id', (req, res, ctx) => {
+        // Handler
         return res(
             ctx.status(200), // Status
-            ctx.json({ // Response
+            ctx.delay(3000),
+            ctx.json({
+                // Response
                 status: 'success',
                 data: {
                     company: 'Intuit',

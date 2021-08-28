@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
 
 ReactDOM.render(
     <React.StrictMode>
-        <App id="EMP00" />
+        <App id="EMP000" />
     </React.StrictMode>,
     document.getElementById('root')
 );

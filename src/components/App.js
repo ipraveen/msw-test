@@ -27,7 +27,7 @@ function App({ id }) {
         };
 
         load();
-    }, []);
+    }, [id]);
 
     // Loading
     if (loading) return <LoadingCard />;
